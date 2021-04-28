@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shrtn</title>
+	<link rel="stylesheet" type="text/css" href="https://rsms.me/inter/inter-display.css" />
+	<link rel="icon" href="https://arhaanb.co/favicon.ico" type="image/ico" />
+	<style>
+		body {
+			font-family: 'InterDisplay', sans-serif;
+		}
+
+		@supports (font-variation-settings: normal) {
+			body {
+				font-family: 'InterDisplay var', sans-serif;
+			}
+		}
+
+		.container {
+			margin: 0 auto;
+			padding: 0 2em;
+			max-width: 25em;
+		}
+
+		.forofour {
+			border: none;
+			opacity: 1;
+			color: rgb(8, 75, 119);
+		}
+
+		.forofour:hover {
+			opacity: 0.75;
+		}
+
+		#app {
+			display: flex;
+			flex-direction: column;
+			height: 90vh;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.title {
+			margin: 0;
+			font-size: 2.5em;
+		}
+
+		.socials {
+			display: flex;
+		}
+
+		a {
+			color: #222;
+			text-decoration: none;
+			border-bottom: solid 1px #222;
+			opacity: 70%;
+			transition: 0.3s;
+		}
+
+		a:hover {
+			opacity: 100%;
+		}
+
+		::selection {
+			color: #222;
+			background: rgba(119, 179, 247, 0.212);
+		}
+
+		.yo {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-center;
+			flex-wrap: wrap;
+			margin-top: 1.5em;
+		}
+
+		.yo a {
+			margin-right: 1em;
+			border: none;
+			color: rgb(8, 75, 119);
+			margin-bottom: 0.8em;
+		}
+
+		.yo a:hover {
+			color: #222;
+			opacity: 90%;
+		}
+
+		@media (max-width: 750px) {
+			#app {
+				height: auto;
+				margin: 16.5vh 0;
+			}
+
+			.none {
+				display: none;
+			}
+		}
+
+		p {
+			line-height: 1.5em;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<h1 class="title"><a href="/" class="forofour">404</a></h1>
+			<p>
+				Yo &mdash; it seems like you hit a route that doesn't exist.
+				<br class="none" />
+				You can go back <a href="/">home</a>, or contact me if you think this
+				is a mistake.
+			</p>
+			<div class="yo">
+				<a href="https://twitter.com/arhaan_bahadur" rel="noopener noreferrer" target="_blank">Twitter</a>
+				<a href="https://instagram.com/arhaan_bahadur" rel="noopener noreferrer" target="_blank">Instagram</a>
+				<a href="https://github.com/arhaanb" rel="noopener noreferrer" target="_blank">GitHub</a>
+				<a href="https://open.spotify.com/user/arhaanb" rel="noopener noreferrer" target="_blank">Spotify</a>
+				<a href="mailto:hi@arhaanb.co" rel="noopener noreferrer" target="_blank">hi@arhaanb.co</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

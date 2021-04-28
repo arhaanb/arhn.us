@@ -1,0 +1,22 @@
+{
+	"redirects": [{ "source": "/", "destination": "https://arhaanb.co" }],
+	"github": {
+		"autoAlias": true,
+		"enabled": true,
+		"silent": true
+	},
+	"cleanUrls": true,
+	"trailingSlash": false,
+	"public": false,
+	"headers": [],
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/api"
+		},
+		{
+			"source": "/gh/(.*)",
+			"destination": "/api"
+		}
+	]
+}
