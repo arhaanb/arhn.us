@@ -11,6 +11,6 @@
 - Enable/Disable links directly through Airtable
 - Generate random URIs through Airtable
 - /gh/${repository}
-- Custom 404 pages (instead of a `res.send(404)`)
+- Custom HTML 404 pages (instead of a `res.send(404)`)
 
 Inspired by [someshkar/dotco](https://github.com/someshkar/dotco)
