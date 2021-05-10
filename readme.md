@@ -10,7 +10,8 @@
 
 - Enable/Disable links directly through Airtable
 - Generate random URIs through Airtable
-- /gh/${repository}
+- Nested links (`/shortened/link`)
+- Shorten GitHub Repo links -> /gh/${repository}
 - Custom HTML 404 pages (instead of a `res.send(404)`)
 
 Inspired by [someshkar/dotco](https://github.com/someshkar/dotco)
