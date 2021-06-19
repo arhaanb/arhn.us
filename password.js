@@ -16,10 +16,8 @@ rl.question('Enter the password you want to use: ', function (password) {
 			if (err) {
 				console.log(err)
 			}
-			console.log()
-			console.log(hash)
-			console.log('Add this as the `SHRTN` variable in the `.env` file.')
-			console.log()
+			console.log(`\n${hash}`)
+			console.log('Add this as the `SHRTN` variable in the `.env` file.\n')
 			process.exit(0)
 		})
 	})
