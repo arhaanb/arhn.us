@@ -41,12 +41,78 @@ app.get('/gh/:repo', async (req, res, next) => {
 	}
 })
 
+app.post('/api/shrtn', async (req, res) => {
+	const { linkName, link, backlink, password } = req.body
+
+	if (backlink.slice(0, 1) == '/') {
+		var backlink1 = backlink.slice(1)
+	} else {
+		var backlink1 = backlink
+	}
+
+	bcrypt.compare(password, process.env.SHRTN, function (err, result) {
+		if (err) {
+			console.log(err)
+			return res.send({ error: true, err })
+		} else {
+			if (result === true) {
+				base('Links')
+					.select({
+						maxRecords: 1,
+						filterByFormula: `LOWER(resolvedUid) = "${backlink1.toLowerCase()}"`
+					})
+					.eachPage(
+						function page(records) {
+							if (records.length > 0) {
+								return res.send({ error: true, message: 'Backlink in use.' })
+							} else {
+								base('Links').create(
+									[
+										{
+											fields: {
+												name: linkName,
+												url: link,
+												uid: backlink1,
+												disabled: false
+											}
+										}
+									],
+									function (err, records) {
+										if (err) {
+											console.error(err)
+											return res.send({ error: true, message: err })
+										}
+										//success
+										return res.send({
+											error: false,
+											message: 'Link shortened succesfully.',
+											backlink1,
+											link
+										})
+									}
+								)
+							}
+						},
+						function done(err) {
+							if (err) {
+								console.error(err)
+								return res.send({ error: true, message: err })
+							}
+						}
+					)
+			} else {
+				return res.send({ error: true, message: 'Incorrect password.' })
+			}
+		}
+	})
+})
+
 app.get('/*', async (req, res) => {
 	const url = req.url.slice(1).toLowerCase()
 	base('Links')
 		.select({
 			maxRecords: 1,
-			filterByFormula: `resolvedUid = "${url}"`,
+			filterByFormula: `resolvedUid = "${url}"`
 		})
 		.eachPage(
 			function page(records) {

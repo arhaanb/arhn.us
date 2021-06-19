@@ -16,7 +16,8 @@
 		"tabWidth": 2,
 		"useTabs": true,
 		"semi": false,
-		"singleQuote": true
+		"singleQuote": true,
+		"trailingComma": "none"
 	},
 	"author": "Arhaan Bahadur",
 	"dependencies": {
