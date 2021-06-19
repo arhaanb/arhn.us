@@ -1,6 +1,8 @@
 const express = require('express')
 const fetch = require('node-fetch')
-var Airtable = require('airtable')
+const Airtable = require('airtable')
+const bcrypt = require('bcryptjs')
+
 fs = require('fs')
 require('dotenv').config()
 

@@ -9,6 +9,7 @@
 ## Functionality
 
 - Enable/Disable links directly through Airtable
+- Easily add links to Airtable via a password protected form ([arhn.us/shrtn](https://arhn.us/shrtn))
 - Generate random URIs through Airtable
 - Nested links (`/shortened/link`)
 - Shorten GitHub Repo links -> /gh/${repository}

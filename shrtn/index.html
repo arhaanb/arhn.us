@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shrtn | arhaanb</title>
   <link rel="stylesheet" type="text/css" href="https://rsms.me/inter/inter-display.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <style>
@@ -608,16 +609,16 @@
         </p>
 
         <label>Name</label>
-        <input type="text" id="name" required placeholder="Name" />
+        <input type="text" autocomplete="off" id="name" required placeholder="Name" />
         <br>
         <label>Link</label>
-        <input type="url" id="link" placeholder="https://website.com" required />
+        <input type="url" autocomplete="off" id="link" placeholder="https://website.com" required />
         <br>
         <label>Backlink</label>
-        <input type="text" id="backlink" placeholder="/something" required />
+        <input type="text" autocomplete="off" id="backlink" placeholder="/something" required />
         <br>
         <label>Password</label>
-        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" autocomplete="off" id="password" placeholder="Password" required />
         <br>
 
         <p id="error"></p>
@@ -631,7 +632,7 @@
     <section id="after" style="display: none;">
       <h1 class="zero" style="margin-top: 4em;">Link created succesfully</h1>
       <p style="margin-top: 0.5em; font-size: 1.2em;">
-        You can now visit <a href="#" id="successlink"></a>
+        You can now visit <a href="#" target="_blank" id="successlink"></a>
       </p>
     </section>
   </div>
@@ -653,15 +654,13 @@
         password
       }
 
-      fetch('/api/shrtn', {
-        method: 'POST',
-        body: JSON.stringify(data)
-      }).then((res) => {
+      axios.post('/api/shrtn', data).then((res) => {
         if (res.data.error == true) {
           document.getElementById('error').innerText = res.data.message
+          btn.innerText = 'Create Link'
         } else {
-          document.getElementById('successlink').innerText = `arhn.us${res.data.backlink1}`
-          document.getElementById('successlink').setAttribute('href') = res.data.link
+          document.getElementById('successlink').innerText = `arhn.us/${res.data.backlink1}`
+          document.getElementById('successlink').setAttribute('href', res.data.link)
           document.getElementById('before').style.display = 'none'
           document.getElementById('after').style.display = 'block'
         }
