@@ -4,8 +4,9 @@
 	"description": "A Vercel + Airtable based URL Shortener.",
 	"main": "index.js",
 	"scripts": {
-		"test": "false"
+		"pw": "node password.js"
 	},
+	"license": "MIT",
 	"keywords": [
 		"vercel",
 		"airtable",

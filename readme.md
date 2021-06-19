@@ -6,6 +6,8 @@
 - Fill up the `.env.sample` file and rename it to .env
 - Deploy to [Vercel](https://vercel.com) and add a domain
 
+> Note: The `SHRTN` constant in the `.env.sample` is a hashed password. To generate a hashed password, check [`password.js`](./password.js)
+
 ## Functionality
 
 - Enable/Disable links directly through Airtable
