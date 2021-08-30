@@ -1,5 +1,5 @@
 {
-	"redirects": [{ "source": "/", "destination": "https://arhaanbahadur.co" }],
+	"redirects": [{ "source": "/", "destination": "https://arhaanbahadur.co" }, { "source": "/achl", "destination": "https://images-ext-2.discordapp.net/external/s4JYxvZvwpoMa0yGLqdbYx5s-woN-S4KHE6GaAInZCI/https/media.discordapp.net/attachments/794848744776138764/880908466707898458/frick_u_achal_giff.gif" }],
 	"github": {
 		"autoAlias": true,
 		"enabled": true,
