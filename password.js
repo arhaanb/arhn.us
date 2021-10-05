@@ -4,6 +4,7 @@
 
 const readline = require('readline')
 const bcrypt = require('bcryptjs')
+const clipboardy = require('clipboardy')
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -16,8 +17,11 @@ rl.question('Enter the password you want to use: ', function (password) {
 			if (err) {
 				console.log(err)
 			}
+
 			console.log(`\n${hash}`)
-			console.log('Add this as the `SHRTN` variable in the `.env` file.\n')
+			clipboardy.writeSync(hash)
+			console.log('Add this as the `SHRTN` variable in the `.env` file.')
+			console.log('(Copied to clipboard)\n')
 			process.exit(0)
 		})
 	})

@@ -24,6 +24,7 @@
 	"dependencies": {
 		"airtable": "^0.11.0",
 		"bcryptjs": "^2.4.3",
+		"clipboardy": "^2.3.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"node-fetch": "^2.6.1"
