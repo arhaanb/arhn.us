@@ -18,7 +18,7 @@ function createLink(e) {
 	axios.post('/api/shrtn', data).then((res) => {
 		if (res.data.error == true) {
 			document.getElementById('error').innerText = res.data.message
-			password = ''
+			document.getElementById('password').value = ''
 			btn.innerText = 'Create Link'
 		} else {
 			document.getElementById(
