@@ -1,6 +1,6 @@
 # Shrtn
 
-> A URL shortener using Airtable and Vercel serverless functions. Available at [arhn.us](https://arhn.us) or [arhaan.xyz](https://arhaan.xyz).
+> A URL shortener using Airtable and Vercel serverless functions. Available at [arhn.us](https://arhn.us).
 
 - Clone [this Airtable Base](https://airtable.com/shrefiKHOJcj1qBnp) to get started
 - Fill up the `.env.sample` file and rename it to .env
@@ -16,5 +16,3 @@
 - Nested links (`/shortened/link`)
 - Shorten GitHub Repo links -> /gh/${repository}
 - Custom HTML 404 pages (instead of a `res.send(404)`)
-
-Inspired by [someshkar/dotco](https://github.com/someshkar/dotco)
